@@ -23,25 +23,25 @@ uint8_t GetChineseStrMap(char *pString)
 {
 	switch (pString)
 	{
-		case '你':
+		case "你":
 			return CNFont14[0];
 			break;
 
-		case '好':
+		case "好":
 			return CNFont14[1];
 			break;
 
-		case '世':
+		case "世":
 			return CNFont14[2];
 			break;
 
-		case '界':
+		case "界":
 			return CNFont14[3];
 			break;
 	}
 }
 
-const uint8_t CNFont14[][28] =
+const uint8_t CNFont14[4][28] =
 {
 	/* (14 X 14 , 宋体 )*/
 	{0x40,0x20,0xF8,0x07,0x10,0x0C,0x87,0x04,0xE4,0x04,0x84,0x14,0x0C,0x00,0x00,0x00,0x3F,0x00,0x08,0x06,0x21,0x20,0x3F,0x00,0x00,0x03,0x0C,0x00},/*"你",0*/
