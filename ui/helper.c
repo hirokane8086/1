@@ -86,10 +86,11 @@ void UI_PrintString(const char *pString, uint8_t Start, uint8_t End, uint8_t Lin
 			};
 			for (j = 0; j < 4; j++)
 			{
-				memmove(gFrameBuffer[Line + 0] + ofs, &chinses[j][0], 7);
-				memmove(gFrameBuffer[Line + 0] + ofs, &chinses[j][7], 7);
-				memmove(gFrameBuffer[Line + 1] + ofs, &chinses[j][14], 7);
-				memmove(gFrameBuffer[Line + 1] + ofs, &chinses[j][21], 7);
+				const unsigned int cofs   = (unsigned int)Start + (i * Width);
+				memmove(gFrameBuffer[Line + 0] + cofs, &chinses[j][0], 7);
+				memmove(gFrameBuffer[Line + 0] + cofs, &chinses[j][7], 7);
+				memmove(gFrameBuffer[Line + 1] + cofs, &chinses[j][14], 7);
+				memmove(gFrameBuffer[Line + 1] + cofs, &chinses[j][21], 7);
 			}
 		}
 		else 
