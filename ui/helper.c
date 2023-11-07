@@ -102,6 +102,7 @@ void UI_PrintString(const char *pString, uint8_t Start, uint8_t End, uint8_t Lin
 			memmove(gFrameBuffer[Line + 0] + ofs, &chinses[3][14], 7);
 			memmove(gFrameBuffer[Line + 1] + ofs, &chinses[3][21], 7);
 		}
+		else 
 		if (pString[i] > ' ' && pString[i] < 127)
 		{
 			const unsigned int index = pString[i] - ' ' - 1;
