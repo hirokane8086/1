@@ -88,13 +88,13 @@ void UI_PrintString(const char *pString, uint8_t Start, uint8_t End, uint8_t Lin
 			memmove(gFrameBuffer[Line + 0] + ofs, &chinses[0][0], 7);
 			memmove(gFrameBuffer[Line + 0] + ofs, &chinses[0][7], 7);
 			memmove(gFrameBuffer[Line + 1] + ofs, &chinses[0][14], 7);
-			memmove(gFrameBuffer[Line + 0] + ofs, &chinses[0][21], 7);
+			memmove(gFrameBuffer[Line + 1] + ofs, &chinses[0][21], 7);
 			memmove(gFrameBuffer[Line + 0] + ofs, &chinses[1][0], 7);
-			memmove(gFrameBuffer[Line + 1] + ofs, &chinses[1][7], 7);
+			memmove(gFrameBuffer[Line + 0] + ofs, &chinses[1][7], 7);
 			memmove(gFrameBuffer[Line + 1] + ofs, &chinses[1][14], 7);
-			memmove(gFrameBuffer[Line + 0] + ofs, &chinses[1][21], 7);
+			memmove(gFrameBuffer[Line + 1] + ofs, &chinses[1][21], 7);
 			memmove(gFrameBuffer[Line + 0] + ofs, &chinses[2][0], 7);
-			memmove(gFrameBuffer[Line + 1] + ofs, &chinses[2][7], 7);
+			memmove(gFrameBuffer[Line + 0] + ofs, &chinses[2][7], 7);
 			memmove(gFrameBuffer[Line + 1] + ofs, &chinses[2][14], 7);
 			memmove(gFrameBuffer[Line + 1] + ofs, &chinses[2][21], 7);
 			memmove(gFrameBuffer[Line + 0] + ofs, &chinses[3][0], 7);
