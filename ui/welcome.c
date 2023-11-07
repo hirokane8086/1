@@ -34,7 +34,7 @@ void UI_DisplayReleaseKeys(void)
 
 	//UI_PrintString("RELEASE", 0, 127, 1, 10);
 	//UI_PrintString("ALL KEYS", 0, 127, 3, 10);
-	UI_PrintString("_test", 0, 127, 1, 10);
+	UI_PrintString('_', 0, 127, 1, 10);
 
 	ST7565_BlitStatusLine();  // blank status line
 	ST7565_BlitFullScreen();
