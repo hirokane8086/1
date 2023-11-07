@@ -84,23 +84,13 @@ void UI_PrintString(const char *pString, uint8_t Start, uint8_t End, uint8_t Lin
 				{0x10,0x10,0xFE,0x10,0x10,0xFF,0x10,0x10,0x10,0x10,0xFF,0x10,0x10,0x00,0x00,0x00,0x3F,0x20,0x20,0x23,0x22,0x22,0x22,0x22,0x23,0x20,0x20,0x00},/*"世",2*/
 				{0x00,0x1F,0x95,0x95,0x55,0x35,0x1F,0x35,0x55,0x95,0x95,0x1F,0x00,0x00,0x01,0x21,0x10,0x0E,0x00,0x00,0x00,0x00,0x00,0x3E,0x00,0x01,0x01,0x00},/*"界",3*/
 			};
-
-			memmove(gFrameBuffer[Line + 0] + ofs, &chinses[0][0], 7);
-			memmove(gFrameBuffer[Line + 0] + ofs, &chinses[0][7], 7);
-			memmove(gFrameBuffer[Line + 1] + ofs, &chinses[0][14], 7);
-			memmove(gFrameBuffer[Line + 1] + ofs, &chinses[0][21], 7);
-			memmove(gFrameBuffer[Line + 0] + ofs, &chinses[1][0], 7);
-			memmove(gFrameBuffer[Line + 0] + ofs, &chinses[1][7], 7);
-			memmove(gFrameBuffer[Line + 1] + ofs, &chinses[1][14], 7);
-			memmove(gFrameBuffer[Line + 1] + ofs, &chinses[1][21], 7);
-			memmove(gFrameBuffer[Line + 0] + ofs, &chinses[2][0], 7);
-			memmove(gFrameBuffer[Line + 0] + ofs, &chinses[2][7], 7);
-			memmove(gFrameBuffer[Line + 1] + ofs, &chinses[2][14], 7);
-			memmove(gFrameBuffer[Line + 1] + ofs, &chinses[2][21], 7);
-			memmove(gFrameBuffer[Line + 0] + ofs, &chinses[3][0], 7);
-			memmove(gFrameBuffer[Line + 0] + ofs, &chinses[3][7], 7);
-			memmove(gFrameBuffer[Line + 1] + ofs, &chinses[3][14], 7);
-			memmove(gFrameBuffer[Line + 1] + ofs, &chinses[3][21], 7);
+			for (i = 0; i < 4; i++)
+			{
+				memmove(gFrameBuffer[Line + 0] + ofs, &chinses[i][0], 7);
+				memmove(gFrameBuffer[Line + 0] + ofs, &chinses[i][7], 7);
+				memmove(gFrameBuffer[Line + 1] + ofs, &chinses[i][14], 7);
+				memmove(gFrameBuffer[Line + 1] + ofs, &chinses[i][21], 7);
+			}
 		}
 		else 
 		if (pString[i] > ' ' && pString[i] < 127)
