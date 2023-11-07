@@ -74,7 +74,7 @@ void UI_PrintString(const char *pString, uint8_t Start, uint8_t End, uint8_t Lin
 	for (i = 0; i < Length; i++)
 	{
 		const unsigned int ofs   = (unsigned int)Start + (i * Width);
-		if (pString == "chinese_test")
+		if (pString[0] == "_")
 		{
 			const uint8_t chinses[4][28] =
 			{
