@@ -63,9 +63,9 @@ void UI_GenerateChannelStringEx(char *pString, const bool bShowPrefix, const uin
 		sprintf(pString, "%03u", ChannelNumber + 1);
 }
 
-void UI_PrintString(const char *pString, uint8_t Start, uint8_t End, uint8_t Line, uint8_t Width)
+void UI_PrintChineseString(const char *pString, uint8_t Start, uint8_t End, uint8_t Line, uint8_t Width)
 {
-	size_t i, j;
+	size_t i;
 	size_t Length = strlen(pString);
 
 	if (End > Start)
@@ -74,24 +74,27 @@ void UI_PrintString(const char *pString, uint8_t Start, uint8_t End, uint8_t Lin
 	for (i = 0; i < Length; i++)
 	{
 		const unsigned int ofs   = (unsigned int)Start + (i * Width);
-		if (pString[0] == '_')
+		uint8_t chinese_map[28] = GetChineseStrMap(pString[i])
+		if (chinese_map)
 		{
-			const uint8_t chinses[4][28] =
-			{
-				/* (14 X 14 , 宋体 )*/
-				{0x40,0x20,0xF8,0x07,0x10,0x0C,0x87,0x04,0xE4,0x04,0x84,0x14,0x0C,0x00,0x00,0x00,0x3F,0x00,0x08,0x06,0x21,0x20,0x3F,0x00,0x00,0x03,0x0C,0x00},/*"你",0*/
-				{0x88,0x78,0x0F,0x08,0xF8,0x00,0x42,0x42,0x42,0xF2,0x4A,0x46,0x40,0x00,0x20,0x11,0x0A,0x06,0x19,0x00,0x00,0x20,0x20,0x3F,0x00,0x00,0x00,0x00},/*"好",1*/
-				{0x10,0x10,0xFE,0x10,0x10,0xFF,0x10,0x10,0x10,0x10,0xFF,0x10,0x10,0x00,0x00,0x00,0x3F,0x20,0x20,0x23,0x22,0x22,0x22,0x22,0x23,0x20,0x20,0x00},/*"世",2*/
-				{0x00,0x1F,0x95,0x95,0x55,0x35,0x1F,0x35,0x55,0x95,0x95,0x1F,0x00,0x00,0x01,0x21,0x10,0x0E,0x00,0x00,0x00,0x00,0x00,0x3E,0x00,0x01,0x01,0x00},/*"界",3*/
-			};
-			for (j = 0; j < 4; j++)
-			{
-				const unsigned int cofs   = (unsigned int)Start + (j * Width);
-				memmove(gFrameBuffer[Line + 0] + cofs, &chinses[j][0], 14);
-				memmove(gFrameBuffer[Line + 1] + cofs, &chinses[j][14], 14);
-			}
+
+			memmove(gFrameBuffer[Line + 0] + ofs, &chinese_map[0], 14);
+			memmove(gFrameBuffer[Line + 1] + ofs, &chinese_map[14], 14);
 		}
-		else 
+	}
+}
+
+void UI_PrintString(const char *pString, uint8_t Start, uint8_t End, uint8_t Line, uint8_t Width)
+{
+	size_t i;
+	size_t Length = strlen(pString);
+
+	if (End > Start)
+		Start += (((End - Start) - (Length * Width)) + 1) / 2;
+
+	for (i = 0; i < Length; i++)
+	{
+		const unsigned int ofs   = (unsigned int)Start + (i * Width);
 		if (pString[i] > ' ' && pString[i] < 127)
 		{
 			const unsigned int index = pString[i] - ' ' - 1;

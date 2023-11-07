@@ -23,6 +23,7 @@
 void UI_GenerateChannelString(char *pString, const uint8_t Channel);
 void UI_GenerateChannelStringEx(char *pString, const bool bShowPrefix, const uint8_t ChannelNumber);
 void UI_PrintString(const char *pString, uint8_t Start, uint8_t End, uint8_t Line, uint8_t Width);
+void UI_PrintChineseString(const char *pString, uint8_t Start, uint8_t End, uint8_t Line, uint8_t Width);
 void UI_PrintStringSmall(const char *pString, uint8_t Start, uint8_t End, uint8_t Line);
 #ifdef ENABLE_SMALL_BOLD
 	void UI_PrintStringSmallBold(const char *pString, uint8_t Start, uint8_t End, uint8_t Line);
@@ -36,4 +37,3 @@ void UI_DisplayPopup(const char *string);
 void UI_DrawPixel(uint8_t x, uint8_t y, bool black);
 void UI_DrawLine(int16_t x1, int16_t y1, int16_t x2, int16_t y2, bool black);
 void UI_DrawRectangle(int16_t x1, int16_t y1, int16_t x2, int16_t y2, bool black);
-
