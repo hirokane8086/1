@@ -69,7 +69,7 @@ void UI_PrintChineseString(const char *pString, uint8_t Start, uint8_t End, uint
 	size_t Length = strlen(pString);
 
 	if (End > Start)
-		Start += (((End - Start) - (Length * Width)) + 1) / 2;
+		Start += (((End - Start) - (Length/2 * Width)) + 1) / 2;
 
 	for (i = 0; pString[i] != '\0'; i+=2)
 	{
