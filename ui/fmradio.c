@@ -42,12 +42,12 @@ void UI_DisplayFM(void)
 	memset(String, 0, sizeof(String));
 	if (gAskToSave)
 	{
-		strcpy(String, "SAVE?");
+		strcpy(String, "保存?");
 	}
 	else
 	if (gAskToDelete)
 	{
-		strcpy(String, "DEL?");
+		strcpy(String, "删除?");
 	}
 	else
 	{
@@ -68,7 +68,7 @@ void UI_DisplayFM(void)
 					strcpy(String, "VFO");
 			}
 			else
-				sprintf(String, "MR(CH%02u)", gEeprom.FM_SelectedChannel + 1);
+				sprintf(String, "频道(CH%02u)", gEeprom.FM_SelectedChannel + 1);
 		}
 		else
 		{

@@ -39,14 +39,14 @@
 const t_menu_item MenuList[] =
 {
 //   text,     voice ID,                               menu ID
-	{"Step",   VOICE_ID_FREQUENCY_STEP,                MENU_STEP          },
-	{"TxPwr",  VOICE_ID_POWER,                         MENU_TXP           }, // was "TXP"
+	{"步频",   VOICE_ID_FREQUENCY_STEP,                MENU_STEP          },
+	{"功率",  VOICE_ID_POWER,                         MENU_TXP           }, // was "TXP"
 	{"RxDCS",  VOICE_ID_DCS,                           MENU_R_DCS         }, // was "R_DCS"
 	{"RxCTCS", VOICE_ID_CTCSS,                         MENU_R_CTCS        }, // was "R_CTCS"
 	{"TxDCS",  VOICE_ID_DCS,                           MENU_T_DCS         }, // was "T_DCS"
 	{"TxCTCS", VOICE_ID_CTCSS,                         MENU_T_CTCS        }, // was "T_CTCS"
-	{"TxODir", VOICE_ID_TX_OFFSET_FREQUENCY_DIRECTION, MENU_SFT_D         }, // was "SFT_D"
-	{"TxOffs", VOICE_ID_TX_OFFSET_FREQUENCY,           MENU_OFFSET        }, // was "OFFSET"
+	{"方向", VOICE_ID_TX_OFFSET_FREQUENCY_DIRECTION, MENU_SFT_D         }, // was "SFT_D"
+	{"频差", VOICE_ID_TX_OFFSET_FREQUENCY,           MENU_OFFSET        }, // was "OFFSET"
 	{"带宽",    VOICE_ID_CHANNEL_BANDWIDTH,             MENU_W_N           },
 	{"Scramb", VOICE_ID_SCRAMBLER_ON,                  MENU_SCR           }, // was "SCR"
 	{"BusyCL", VOICE_ID_BUSY_LOCKOUT,                  MENU_BCL           }, // was "BCL"
@@ -66,31 +66,31 @@ const t_menu_item MenuList[] =
 	{"NOAA-S", VOICE_ID_INVALID,                       MENU_NOAA_S        },
 #endif
 
-	{"F1Shrt",    VOICE_ID_INVALID,                    MENU_F1SHRT        },
-	{"F1Long",    VOICE_ID_INVALID,                    MENU_F1LONG        },
-	{"F2Shrt",    VOICE_ID_INVALID,                    MENU_F2SHRT        },
-	{"F2Long",    VOICE_ID_INVALID,                    MENU_F2LONG        },
-	{"M Long",    VOICE_ID_INVALID,                    MENU_MLONG         },
+	{"F1短",    VOICE_ID_INVALID,                    MENU_F1SHRT        },
+	{"F1长",    VOICE_ID_INVALID,                    MENU_F1LONG        },
+	{"F2短",    VOICE_ID_INVALID,                    MENU_F2SHRT        },
+	{"F2长",    VOICE_ID_INVALID,                    MENU_F2LONG        },
+	{"M长按",    VOICE_ID_INVALID,                    MENU_MLONG         },
 
 	{"KeyLck", VOICE_ID_INVALID,                       MENU_AUTOLK        }, // was "AUTOLk"
 	{"TxTOut", VOICE_ID_TRANSMIT_OVER_TIME,            MENU_TOT           }, // was "TOT"
 	{"BatSav", VOICE_ID_SAVE_MODE,                     MENU_SAVE          }, // was "SAVE"
-	{"Mic",    VOICE_ID_INVALID,                       MENU_MIC           },
+	{"话筒",    VOICE_ID_INVALID,                       MENU_MIC           },
 #ifdef ENABLE_AUDIO_BAR
 	{"声压", VOICE_ID_INVALID,                       MENU_MIC_BAR       },
 #endif		
-	{"ChDisp", VOICE_ID_INVALID,                       MENU_MDF           }, // was "MDF"
+	{"屏显", VOICE_ID_INVALID,                       MENU_MDF           }, // was "MDF"
 	{"POnMsg", VOICE_ID_INVALID,                       MENU_PONMSG        },
 	{"BatTxt", VOICE_ID_INVALID,                       MENU_BAT_TXT       },	
-	{"BackLt", VOICE_ID_INVALID,                       MENU_ABR           }, // was "ABR"
+	{"背光", VOICE_ID_INVALID,                       MENU_ABR           }, // was "ABR"
 	{"BLMin",  VOICE_ID_INVALID,                       MENU_ABR_MIN       },
 	{"BLMax",  VOICE_ID_INVALID,                       MENU_ABR_MAX       },
 	{"BltTRX", VOICE_ID_INVALID,                       MENU_ABR_ON_TX_RX  },
 	{"Beep",   VOICE_ID_BEEP_PROMPT,                   MENU_BEEP          },
 #ifdef ENABLE_VOICE
-	{"Voice",  VOICE_ID_VOICE_PROMPT,                  MENU_VOICE         },
+	{"语音",  VOICE_ID_VOICE_PROMPT,                  MENU_VOICE         },
 #endif
-	{"Roger",  VOICE_ID_INVALID,                       MENU_ROGER         },
+	{"尾音",  VOICE_ID_INVALID,                       MENU_ROGER         },
 	{"STE",    VOICE_ID_INVALID,                       MENU_STE           },
 	{"RP STE", VOICE_ID_INVALID,                       MENU_RP_STE        },
 	{"1 Call", VOICE_ID_INVALID,                       MENU_1_CALL        },
@@ -118,12 +118,12 @@ const t_menu_item MenuList[] =
 	{"VOX",    VOICE_ID_VOX,                           MENU_VOX           },
 #endif
 	{"BatVol", VOICE_ID_INVALID,                       MENU_VOL           }, // was "VOL"
-	{"RxMode", VOICE_ID_DUAL_STANDBY,                  MENU_TDR           },
-	{"Sql",    VOICE_ID_SQUELCH,                       MENU_SQL           },
+	{"双守", VOICE_ID_DUAL_STANDBY,                  MENU_TDR           },
+	{"静噪",    VOICE_ID_SQUELCH,                       MENU_SQL           },
 
 	// hidden menu items from here on
 	// enabled if pressing both the PTT and upper side button at power-on
-	{"F Lock", VOICE_ID_INVALID,                       MENU_F_LOCK        },
+	{"键锁", VOICE_ID_INVALID,                       MENU_F_LOCK        },
 	{"Tx 200", VOICE_ID_INVALID,                       MENU_200TX         }, // was "200TX"
 	{"Tx 350", VOICE_ID_INVALID,                       MENU_350TX         }, // was "350TX"
 	{"Tx 500", VOICE_ID_INVALID,                       MENU_500TX         }, // was "500TX"
@@ -135,7 +135,7 @@ const t_menu_item MenuList[] =
 #endif
 	{"BatCal", VOICE_ID_INVALID,                       MENU_BATCAL        }, // battery voltage calibration
 	{"BatTyp", VOICE_ID_INVALID,                       MENU_BATTYP        }, // battery type 1600/2200mAh
-	{"Reset",  VOICE_ID_INITIALISATION,                MENU_RESET         }, // might be better to move this to the hidden menu items ?
+	{"重置",  VOICE_ID_INITIALISATION,                MENU_RESET         }, // might be better to move this to the hidden menu items ?
 
 	{"",       VOICE_ID_INVALID,                       0xff               }  // end of list - DO NOT delete or move this this
 };
@@ -179,17 +179,17 @@ const char gSubMenu_SAVE[5][4] =
 
 const char gSubMenu_TOT[11][7] =
 {
-	"30 sec",
-	"1 min",
-	"2 min",
-	"3 min",
-	"4 min",
-	"5 min",
-	"6 min",
-	"7 min",
-	"8 min",
-	"9 min",
-	"15 min"
+	"30 秒",
+	"1 分",
+	"2 分",
+	"3 分",
+	"4 分",
+	"5 分",
+	"6 分",
+	"7 分",
+	"8 分",
+	"9 分",
+	"15 分"
 };
 
 const char* gSubMenu_RXMode[4] =
@@ -203,15 +203,15 @@ const char* gSubMenu_RXMode[4] =
 #ifdef ENABLE_VOICE
 	const char gSubMenu_VOICE[3][4] =
 	{
-		"OFF",
-		"CHI",
+		"关",
+		"中文",
 		"ENG"
 	};
 #endif
 
 const char gSubMenu_SC_REV[3][8] =
 {
-	"TIMEOUT",
+	"超时",
 	"CARRIER",
 	"STOP"
 };
@@ -234,7 +234,7 @@ const char* gSubMenu_MDF[4] =
 
 const char gSubMenu_D_RSP[4][11] =
 {
-	"DO\nNOTHING",
+	"无",
 	"响铃",
 	"回答",
 	"皆有"
@@ -242,24 +242,24 @@ const char gSubMenu_D_RSP[4][11] =
 
 const char* gSubMenu_PTT_ID[5] =
 {
-	"OFF",
+	"关",
 	"UP CODE",
 	"DOWN CODE",
 	"UP+DOWN\nCODE",
-	"APOLLO\nQUINDAR"
+	"阿波罗\n昆达信令"
 };
 
 const char gSubMenu_PONMSG[4][8] =
 {
-	"FULL",
-	"MESSAGE",
-	"VOLTAGE",
-	"NONE"
+	"全屏",
+	"信息",
+	"电压",
+	"无"
 };
 
 const char gSubMenu_ROGER[][6] =
 {
-	"OFF",
+	"关",
 	"ROGER",
 	"MDC"
 };
@@ -282,22 +282,22 @@ const char gSubMenu_F_LOCK[6][4] =
 
 const char gSubMenu_BACKLIGHT[8][7] =
 {
-	"OFF",
-	"5 sec",
-	"10 sec",
-	"20 sec",
-	"1 min",
-	"2 min",
-	"4 min",
-	"ON"
+	"关",
+	"5 秒",
+	"10 秒",
+	"20 秒",
+	"1 分",
+	"2 分",
+	"4 分",
+	"常开"
 };
 
 const char gSubMenu_RX_TX[4][6] =
 {
-	"OFF",
-	"TX",
-	"RX",
-	"TX/RX"
+	"关",
+	"发",
+	"收",
+	"收/发"
 };
 
 #ifdef ENABLE_AM_FIX_TEST1
@@ -312,7 +312,7 @@ const char gSubMenu_RX_TX[4][6] =
 
 const char gSubMenu_BAT_TXT[3][8] =
 {
-	"NONE",
+	"无",
 	"电压",
 	"电量"
 };
@@ -325,7 +325,7 @@ const char gSubMenu_BATTYP[2][9] =
 
 const char gSubMenu_SCRAMBLER[11][7] =
 {
-	"OFF",
+	"关",
 	"2600Hz",
 	"2700Hz",
 	"2800Hz",
@@ -340,27 +340,27 @@ const char gSubMenu_SCRAMBLER[11][7] =
 
 const t_sidefunction SIDEFUNCTIONS[] =
 {
-	{"NONE",			ACTION_OPT_NONE},
-	{"FLASH\nLIGHT",	ACTION_OPT_FLASHLIGHT},
-	{"POWER",			ACTION_OPT_POWER},
-	{"MONITOR",			ACTION_OPT_MONITOR},
-	{"SCAN",			ACTION_OPT_SCAN},
+	{"无",			ACTION_OPT_NONE},
+	{"手电\n灯光",	ACTION_OPT_FLASHLIGHT},
+	{"功率",			ACTION_OPT_POWER},
+	{"监听",			ACTION_OPT_MONITOR},
+	{"扫描",			ACTION_OPT_SCAN},
 #ifdef ENABLE_VOX
-	{"VOX",				ACTION_OPT_VOX},
+	{"声控",				ACTION_OPT_VOX},
 #endif
 #ifdef ENABLE_ALARM	
-	{"ALARM",			ACTION_OPT_ALARM},
+	{"警告",			ACTION_OPT_ALARM},
 #endif
 #ifdef ENABLE_FMRADIO
-	{"FM RADIO",		ACTION_OPT_FM},
+	{"收音机",		ACTION_OPT_FM},
 #endif	
 #ifdef ENABLE_TX1750	
 	{"1750HZ",			ACTION_OPT_1750},
 #endif
-	{"LOCK\nKEYPAD",	ACTION_OPT_KEYLOCK},
-	{"SWITCH\nVFO",		ACTION_OPT_A_B},
+	{"键盘\n锁定",	ACTION_OPT_KEYLOCK},
+	{"切换\n上下信道",		ACTION_OPT_A_B},
 	{"VFO/MR",			ACTION_OPT_VFO_MR},
-	{"SWITCH\nDEMODUL",	ACTION_OPT_SWITCH_DEMODUL},
+	{"切换\n模式",	ACTION_OPT_SWITCH_DEMODUL},
 #ifdef ENABLE_BLMIN_TMP_OFF
 	{"BLMIN\nTMP OFF",  ACTION_OPT_BLMIN_TMP_OFF}, 		//BackLight Minimum Temporay OFF
 #endif
