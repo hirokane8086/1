@@ -47,11 +47,11 @@ const t_menu_item MenuList[] =
 	{"TxCTCS", VOICE_ID_CTCSS,                         MENU_T_CTCS        }, // was "T_CTCS"
 	{"TxODir", VOICE_ID_TX_OFFSET_FREQUENCY_DIRECTION, MENU_SFT_D         }, // was "SFT_D"
 	{"TxOffs", VOICE_ID_TX_OFFSET_FREQUENCY,           MENU_OFFSET        }, // was "OFFSET"
-	{"W/N",    VOICE_ID_CHANNEL_BANDWIDTH,             MENU_W_N           },
+	{"带宽",    VOICE_ID_CHANNEL_BANDWIDTH,             MENU_W_N           },
 	{"Scramb", VOICE_ID_SCRAMBLER_ON,                  MENU_SCR           }, // was "SCR"
 	{"BusyCL", VOICE_ID_BUSY_LOCKOUT,                  MENU_BCL           }, // was "BCL"
 	{"Compnd", VOICE_ID_INVALID,                       MENU_COMPAND       },
-	{"Demodu", VOICE_ID_INVALID,                       MENU_AM            }, // was "AM"
+	{"模式", VOICE_ID_INVALID,                       MENU_AM            }, // was "AM"
 	{"ScAdd1", VOICE_ID_INVALID,                       MENU_S_ADD1        },
 	{"ScAdd2", VOICE_ID_INVALID,                       MENU_S_ADD2        },
 	{"存储", VOICE_ID_MEMORY_CHANNEL,                MENU_MEM_CH        }, // was "MEM-CH"
@@ -144,22 +144,22 @@ const uint8_t FIRST_HIDDEN_MENU_ITEM = MENU_F_LOCK;
 
 const char gSubMenu_TXP[3][5] =
 {
-	"LOW",
-	"MID",
-	"HIGH"
+	"低",
+	"中",
+	"高"
 };
 
 const char gSubMenu_SFT_D[3][4] =
 {
-	"OFF",
+	"关",
 	"+",
 	"-"
 };
 
 const char gSubMenu_W_N[2][7] =
 {
-	"WIDE",
-	"NARROW"
+	"宽",
+	"窄"
 };
 
 const char gSubMenu_OFF_ON[2][4] =
@@ -170,7 +170,7 @@ const char gSubMenu_OFF_ON[2][4] =
 
 const char gSubMenu_SAVE[5][4] =
 {
-	"OFF",
+	"关",
 	"1:1",
 	"1:2",
 	"1:3",
@@ -194,10 +194,10 @@ const char gSubMenu_TOT[11][7] =
 
 const char* gSubMenu_RXMode[4] =
 {
-	"MAIN\nONLY", 		// TX and RX on main only
-	"DUAL RX\nRESPOND", // Watch both and respond
-	"CROSS\nBAND", 		// TX on main, RX on secondary
-	"MAIN TX\nDUAL RX" 	// always TX on main, but RX on both
+	"主信道收发", 		// TX and RX on main only
+	"动态双守", // Watch both and respond
+	"跨段收发", 		// TX on main, RX on secondary
+	"主发双守" 	// always TX on main, but RX on both
 };
 
 #ifdef ENABLE_VOICE
@@ -218,10 +218,10 @@ const char gSubMenu_SC_REV[3][8] =
 
 const char* gSubMenu_MDF[4] =
 {
-	"FREQ",
-	"CHANNEL\nNUMBER",
-	"NAME",
-	"NAME\n+\nFREQ"
+	"频率",
+	"信道\n编号",
+	"信道名",
+	"名称\n+\n频率"
 };
 
 #ifdef ENABLE_ALARM
@@ -235,9 +235,9 @@ const char* gSubMenu_MDF[4] =
 const char gSubMenu_D_RSP[4][11] =
 {
 	"DO\nNOTHING",
-	"RING",
-	"REPLY",
-	"BOTH"
+	"响铃",
+	"回答",
+	"皆有"
 };
 
 const char* gSubMenu_PTT_ID[5] =
@@ -313,8 +313,8 @@ const char gSubMenu_RX_TX[4][6] =
 const char gSubMenu_BAT_TXT[3][8] =
 {
 	"NONE",
-	"VOLTAGE",
-	"PERCENT"
+	"电压",
+	"电量"
 };
 
 const char gSubMenu_BATTYP[2][9] =
