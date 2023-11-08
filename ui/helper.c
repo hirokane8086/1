@@ -69,7 +69,7 @@ void UI_PrintString(const char *pString, uint8_t Start, uint8_t End, uint8_t Lin
 	size_t i, j;
 	size_t Length;
 
-	for (Length=0; pString[i]!='\0'; Length++)
+	for (Length=0; pString[Length]!='\0'; Length++)
 	{
 		if (pString[Length] > 127)
 			Length+=2;
