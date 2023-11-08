@@ -164,8 +164,8 @@ const char gSubMenu_W_N[2][7] =
 
 const char gSubMenu_OFF_ON[2][4] =
 {
-	"OFF",
-	"ON"
+	"关",
+	"开"
 };
 
 const char gSubMenu_SAVE[5][4] =
