@@ -79,6 +79,7 @@ void UI_PrintChineseString(const char *pString, uint8_t Start, uint8_t End, uint
 		{
 			memmove(gFrameBuffer[Line + 0] + ofs, &CNFont14[i][0], 14);
 			memmove(gFrameBuffer[Line + 1] + ofs, &CNFont14[i][14], 14);
+			break;
 		}
 	}
 }
