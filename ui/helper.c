@@ -66,18 +66,18 @@ void UI_GenerateChannelStringEx(char *pString, const bool bShowPrefix, const uin
 void UI_PrintChineseString(const char *pString, uint8_t Start, uint8_t End, uint8_t Line, uint8_t Width)
 {
 	size_t i;
-	size_t Length = strlen(pString);
+	size_t CNLength = strlen(pString)/2;
 
 	if (End > Start)
-		Start += (((End - Start) - (Length/2 * Width)) + 1) / 2;
+		Start += (((End - Start) - (Length * Width)) + 1) / 2;
 
-	for (i = 0; pString[i] != '\0'; i+=2)
+	for (i = 0; i < CNLength; i++)
 	{
 		const unsigned int ofs   = (unsigned int)Start + (i * Width);
-		if (pString[i]==CNList[i] && pString[i+1]==CNList[i+1])
+		if (pString[2*i]==CNList[2*i] && pString[2*i+1]==CNList[2*i+1])
 		{
-			memmove(gFrameBuffer[Line + 0] + ofs, &CNFont14[i/2][0], 14);
-			memmove(gFrameBuffer[Line + 1] + ofs, &CNFont14[i/2][14], 14);
+			memmove(gFrameBuffer[Line + 0] + ofs, &CNFont14[i][0], 14);
+			memmove(gFrameBuffer[Line + 1] + ofs, &CNFont14[i][14], 14);
 		}
 	}
 }
