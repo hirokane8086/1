@@ -36,8 +36,8 @@ void UI_DisplayFM(void)
 	memset(gFrameBuffer, 0, sizeof(gFrameBuffer));
 
 	memset(String, 0, sizeof(String));
-	strcpy(String, "FM");
-	UI_PrintString(String, 0, 127, 0, 12);
+	strcpy(String, "FM广播");
+	UI_PrintString(String, 0, 127, 0, 5);
 
 	memset(String, 0, sizeof(String));
 	if (gAskToSave)
