@@ -56,7 +56,7 @@ const t_menu_item MenuList[] =
 	{"ScAdd2", VOICE_ID_INVALID,                       MENU_S_ADD2        },
 	{"ChSave", VOICE_ID_MEMORY_CHANNEL,                MENU_MEM_CH        }, // was "MEM-CH"
 	{"ChDele", VOICE_ID_DELETE_CHANNEL,                MENU_DEL_CH        }, // was "DEL-CH"
-	{"ChName", VOICE_ID_INVALID,                       MENU_MEM_NAME      },	
+	{"信道", VOICE_ID_INVALID,                       MENU_MEM_NAME      },	
 
 	{"SList",  VOICE_ID_INVALID,                       MENU_S_LIST        },
 	{"SList1", VOICE_ID_INVALID,                       MENU_SLIST1        },
@@ -77,7 +77,7 @@ const t_menu_item MenuList[] =
 	{"BatSav", VOICE_ID_SAVE_MODE,                     MENU_SAVE          }, // was "SAVE"
 	{"Mic",    VOICE_ID_INVALID,                       MENU_MIC           },
 #ifdef ENABLE_AUDIO_BAR
-	{"MicBar", VOICE_ID_INVALID,                       MENU_MIC_BAR       },
+	{"声压显示", VOICE_ID_INVALID,                       MENU_MIC_BAR       },
 #endif		
 	{"ChDisp", VOICE_ID_INVALID,                       MENU_MDF           }, // was "MDF"
 	{"POnMsg", VOICE_ID_INVALID,                       MENU_PONMSG        },
