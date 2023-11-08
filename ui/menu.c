@@ -56,7 +56,7 @@ const t_menu_item MenuList[] =
 	{"ScAdd2", VOICE_ID_INVALID,                       MENU_S_ADD2        },
 	{"ChSave", VOICE_ID_MEMORY_CHANNEL,                MENU_MEM_CH        }, // was "MEM-CH"
 	{"ChDele", VOICE_ID_DELETE_CHANNEL,                MENU_DEL_CH        }, // was "DEL-CH"
-	{"信道", VOICE_ID_INVALID,                       MENU_MEM_NAME      },	
+	{"信道名", VOICE_ID_INVALID,                       MENU_MEM_NAME      },	
 
 	{"SList",  VOICE_ID_INVALID,                       MENU_S_LIST        },
 	{"SList1", VOICE_ID_INVALID,                       MENU_SLIST1        },
@@ -398,7 +398,7 @@ void UI_DisplayMenu(void)
 	const unsigned int menu_item_x1    = (8 * menu_list_width) + 2;
 	const unsigned int menu_item_x2    = LCD_WIDTH - 1;
 	unsigned int       i;
-	char               String[64];  // bigger cuz we can now do multi-line in one string (use '\n' char)
+	char               String[96];  // bigger cuz we can now do multi-line in one string (use '\n' char)
 	char               Contact[16];
 
 	// clear the screen buffer
