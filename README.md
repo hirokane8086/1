@@ -1,3 +1,7 @@
+# 泉盛UV-K5 开源固件中文版  
+
+基于[egzumer的开源固件项目](https://github.com/egzumer/uv-k5-firmware-custom)进行修改
+
 # Main features:
 * many of OneOfEleven mods:
    * AM fix, huge improovement in reception quality
