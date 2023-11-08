@@ -242,9 +242,9 @@ void UI_DisplayMain(void)
 
 	if (gEeprom.KEY_LOCK && gKeypadLocked > 0)
 	{	// tell user how to unlock the keyboard
-		UI_PrintChineseString("长按", 0, LCD_WIDTH, 1, 8);
+		UI_PrintChineseString("长按", 0, LCD_WIDTH, 1, 14);
 		UI_PrintString("#", 0, LCD_WIDTH, 1, 8);
-		UI_PrintChineseString("以解锁", 0, LCD_WIDTH, 3, 8);
+		UI_PrintChineseString("以解锁", 0, LCD_WIDTH, 3, 14);
 		ST7565_BlitFullScreen();
 		return;
 	}
