@@ -71,15 +71,13 @@ void UI_PrintChineseString(const char *pString, uint8_t Start, uint8_t End, uint
 	if (End > Start)
 		Start += (((End - Start) - (Length * Width)) + 1) / 2;
 
-	for (i = 0; i < Length; i++)
+	for (i = 0; i < Length; i+=2)
 	{
 		const unsigned int ofs   = (unsigned int)Start + (i * Width);
-		uint8_t chinese_map[28] = GetChineseStrMap(pString[i])
-		if (chinese_map)
+		if (pString[i]==CNList[i] && pString[i+1]==CNList[i+1])
 		{
-
-			memmove(gFrameBuffer[Line + 0] + ofs, &chinese_map[0], 14);
-			memmove(gFrameBuffer[Line + 1] + ofs, &chinese_map[14], 14);
+			memmove(gFrameBuffer[Line + 0] + ofs, &CNFont14[i/2][0], 14);
+			memmove(gFrameBuffer[Line + 1] + ofs, &CNFont14[i/2][14], 14);
 		}
 	}
 }
