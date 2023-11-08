@@ -65,7 +65,7 @@ void UI_GenerateChannelStringEx(char *pString, const bool bShowPrefix, const uin
 
 void UI_PrintChineseString(const char *pString, uint8_t Start, uint8_t End, uint8_t Line, uint8_t Width)
 {
-	size_t i;
+	size_t i, j;
 	size_t CNLength = strlen(pString)/2;
 
 	if (End > Start)
