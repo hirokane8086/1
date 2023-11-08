@@ -77,7 +77,7 @@ void UI_PrintString(const char *pString, uint8_t Start, uint8_t End, uint8_t Lin
 	{
 		if (pString[i] > ' ' && pString[i] < 127)
 		{
-			const unsigned int ofs   = (unsigned int)Start + (i * Width/2);
+			const unsigned int ofs   = (unsigned int)Start + (i * Width);
 			const unsigned int index = pString[i] - ' ' - 1;
 			memmove(gFrameBuffer[Line + 0] + ofs, &gFontBig[index][0], 7);
 			memmove(gFrameBuffer[Line + 1] + ofs, &gFontBig[index][7], 7);
@@ -85,7 +85,7 @@ void UI_PrintString(const char *pString, uint8_t Start, uint8_t End, uint8_t Lin
 		else
 		if (pString[i] > 127)
 		{
-			const unsigned int cnofs   = (unsigned int)Start + (i * Width);
+			const unsigned int cnofs   = (unsigned int)Start + (i * Width/2);
 			for (j = 0; j< strlen(CNList)/3; j++)
 				if (pString[i]==CNList[3*j] && pString[i+1]==CNList[3*j+1] && pString[i+2]==CNList[3*j+2])
 				{
