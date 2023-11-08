@@ -503,7 +503,6 @@ void UI_DisplayMenu(void)
 		#ifdef ENABLE_AUDIO_BAR
 			case MENU_MIC_BAR:
 				strcpy(String, gSubMenu_OFF_ON[gSubMenuSelection]);
-				String[strlen(gSubMenu_OFF_ON[gSubMenuSelection])] = '\0';
 				break;
 		#endif
 
