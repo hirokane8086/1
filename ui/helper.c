@@ -77,8 +77,8 @@ void UI_PrintChineseString(const char *pString, uint8_t Start, uint8_t End, uint
 		for (j = 0; j< strlen(CNList)/3; j++)
 		if (pString[3*i]==CNList[3*j] && pString[3*i+1]==CNList[3*j+1] && pString[3*i+2]==CNList[3*j+2])
 		{
-			memmove(gFrameBuffer[Line + 0] + ofs, &CNFont14[i][0], 14);
-			memmove(gFrameBuffer[Line + 1] + ofs, &CNFont14[i][14], 14);
+			memmove(gFrameBuffer[Line + 0] + ofs, &CNFont14[j][0], 14);
+			memmove(gFrameBuffer[Line + 1] + ofs, &CNFont14[j][14], 14);
 			break;
 		}
 	}
