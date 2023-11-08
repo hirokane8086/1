@@ -67,12 +67,12 @@ void UI_GenerateChannelStringEx(char *pString, const bool bShowPrefix, const uin
 void UI_PrintString(const char *pString, uint8_t Start, uint8_t End, uint8_t Line, uint8_t Width)
 {
 	size_t i, j;
-	size_t Length
+	size_t Length;
 
 	for (Length=0; pString[i]!='\0'; Length++)
 	{
 		if (pString[Length] > 127)
-			Length+=2
+			Length+=2;
 		
 	}
 
@@ -95,6 +95,7 @@ void UI_PrintString(const char *pString, uint8_t Start, uint8_t End, uint8_t Lin
 				{
 					memmove(gFrameBuffer[Line + 0] + ofs, &CNFont14[j][0], 14);
 					memmove(gFrameBuffer[Line + 1] + ofs, &CNFont14[j][14], 14);
+					i += 2;
 					break;
 				}
 		}
