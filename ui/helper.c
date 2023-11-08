@@ -74,7 +74,8 @@ void UI_PrintChineseString(const char *pString, uint8_t Start, uint8_t End, uint
 	for (i = 0; i < CNLength; i++)
 	{
 		const unsigned int ofs   = (unsigned int)Start + (i * Width);
-		if (pString[2*i]==CNList[2*i] && pString[2*i+1]==CNList[2*i+1])
+		for (j = 0; j< strlen(CNList)/2; j++)
+		if (pString[2*i]==CNList[2*j] && pString[2*i+1]==CNList[2*j+1])
 		{
 			memmove(gFrameBuffer[Line + 0] + ofs, &CNFont14[i][0], 14);
 			memmove(gFrameBuffer[Line + 1] + ofs, &CNFont14[i][14], 14);
