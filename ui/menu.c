@@ -398,7 +398,7 @@ void UI_DisplayMenu(void)
 	const unsigned int menu_item_x1    = (8 * menu_list_width) + 2;
 	const unsigned int menu_item_x2    = LCD_WIDTH - 1;
 	unsigned int       i;
-	char               String[96];  // bigger cuz we can now do multi-line in one string (use '\n' char)
+	char               String[128];  // bigger cuz we can now do multi-line in one string (use '\n' char)
 	char               Contact[16];
 
 	// clear the screen buffer
