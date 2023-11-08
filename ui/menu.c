@@ -292,7 +292,7 @@ const char gSubMenu_BACKLIGHT[8][7] =
 	"常开"
 };
 
-const char gSubMenu_RX_TX[4][6] =
+const char gSubMenu_RX_TX[4][7] =
 {
 	"关",
 	"发",
