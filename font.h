@@ -26,7 +26,7 @@ extern const uint8_t gFont3x5[96][3];
 extern const uint8_t gFontSmall[95 - 1][6];
 
 extern const char *CNList;
-extern uint8_t CNFont14[4][28];
+extern const uint8_t CNFont14[4][28];
 
 #ifdef ENABLE_SMALL_BOLD
 	extern const uint8_t gFontSmallBold[95 - 1][6];
