@@ -32,9 +32,8 @@ void UI_DisplayReleaseKeys(void)
 	memset(gStatusLine,  0, sizeof(gStatusLine));
 	memset(gFrameBuffer, 0, sizeof(gFrameBuffer));
 
-	//UI_PrintString("RELEASE", 0, 127, 1, 10);
-	//UI_PrintString("ALL KEYS", 0, 127, 3, 10);
-	UI_PrintChineseString("释放所有按键", 0, 127, 1, 14);
+	UI_PrintString("释放", 0, 127, 1, 14);
+	UI_PrintString("所有按键", 0, 127, 3, 14);
 
 	ST7565_BlitStatusLine();  // blank status line
 	ST7565_BlitFullScreen();
