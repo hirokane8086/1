@@ -82,7 +82,7 @@ void UI_PrintString(const char *pString, uint8_t Start, uint8_t End, uint8_t Lin
 			const unsigned int index = pString[i] - ' ' - 1;
 			memmove(gFrameBuffer[Line + 0] + ofs, &gFontBig[index][0], 7);
 			memmove(gFrameBuffer[Line + 1] + ofs, &gFontBig[index][7], 7);
-			ofs_fix = 0
+			ofs_fix = 0;
 		}
 		else
 		if (pString[i] > 127)
@@ -93,7 +93,7 @@ void UI_PrintString(const char *pString, uint8_t Start, uint8_t End, uint8_t Lin
 					memmove(gFrameBuffer[Line + 0] + ofs, &CNFont14[j][0], 14);
 					memmove(gFrameBuffer[Line + 1] + ofs, &CNFont14[j][14], 14);
 					i+=2;
-					ofs_fix = -2
+					ofs_fix = -1;
 					break;
 				}
 		}
