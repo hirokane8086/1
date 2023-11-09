@@ -48,10 +48,10 @@ const t_menu_item MenuList[] =
 	{"方向", VOICE_ID_TX_OFFSET_FREQUENCY_DIRECTION, MENU_SFT_D         }, // was "SFT_D"
 	{"频差", VOICE_ID_TX_OFFSET_FREQUENCY,           MENU_OFFSET        }, // was "OFFSET"
 	{"带宽",    VOICE_ID_CHANNEL_BANDWIDTH,             MENU_W_N           },
-	{"Scramb", VOICE_ID_SCRAMBLER_ON,                  MENU_SCR           }, // was "SCR"
-	{"BusyCL", VOICE_ID_BUSY_LOCKOUT,                  MENU_BCL           }, // was "BCL"
+	{"扰频", VOICE_ID_SCRAMBLER_ON,                  MENU_SCR           }, // was "SCR"
+	{"忙锁", VOICE_ID_BUSY_LOCKOUT,                  MENU_BCL           }, // was "BCL"
 	{"Compnd", VOICE_ID_INVALID,                       MENU_COMPAND       },
-	{"模式", VOICE_ID_INVALID,                       MENU_AM            }, // was "AM"
+	{"解码", VOICE_ID_INVALID,                       MENU_AM            }, // was "AM"
 	{"ScAdd1", VOICE_ID_INVALID,                       MENU_S_ADD1        },
 	{"ScAdd2", VOICE_ID_INVALID,                       MENU_S_ADD2        },
 	{"存储", VOICE_ID_MEMORY_CHANNEL,                MENU_MEM_CH        }, // was "MEM-CH"
@@ -66,22 +66,22 @@ const t_menu_item MenuList[] =
 	{"NOAA-S", VOICE_ID_INVALID,                       MENU_NOAA_S        },
 #endif
 
-	{"F1短",    VOICE_ID_INVALID,                    MENU_F1SHRT        },
-	{"F1长",    VOICE_ID_INVALID,                    MENU_F1LONG        },
-	{"F2短",    VOICE_ID_INVALID,                    MENU_F2SHRT        },
-	{"F2长",    VOICE_ID_INVALID,                    MENU_F2LONG        },
-	{"M长按",    VOICE_ID_INVALID,                    MENU_MLONG         },
+	{"侧1短",    VOICE_ID_INVALID,                    MENU_F1SHRT        },
+	{"侧1长",    VOICE_ID_INVALID,                    MENU_F1LONG        },
+	{"侧2短",    VOICE_ID_INVALID,                    MENU_F2SHRT        },
+	{"侧2长",    VOICE_ID_INVALID,                    MENU_F2LONG        },
+	{"菜单长",    VOICE_ID_INVALID,                    MENU_MLONG         },
 
-	{"KeyLck", VOICE_ID_INVALID,                       MENU_AUTOLK        }, // was "AUTOLk"
+	{"键盘锁", VOICE_ID_INVALID,                       MENU_AUTOLK        }, // was "AUTOLk"
 	{"TxTOut", VOICE_ID_TRANSMIT_OVER_TIME,            MENU_TOT           }, // was "TOT"
-	{"BatSav", VOICE_ID_SAVE_MODE,                     MENU_SAVE          }, // was "SAVE"
+	{"节电", VOICE_ID_SAVE_MODE,                     MENU_SAVE          }, // was "SAVE"
 	{"话筒",    VOICE_ID_INVALID,                       MENU_MIC           },
 #ifdef ENABLE_AUDIO_BAR
 	{"声压", VOICE_ID_INVALID,                       MENU_MIC_BAR       },
 #endif		
 	{"屏显", VOICE_ID_INVALID,                       MENU_MDF           }, // was "MDF"
-	{"POnMsg", VOICE_ID_INVALID,                       MENU_PONMSG        },
-	{"BatTxt", VOICE_ID_INVALID,                       MENU_BAT_TXT       },	
+	{"机显", VOICE_ID_INVALID,                       MENU_PONMSG        },
+	{"样式", VOICE_ID_INVALID,                       MENU_BAT_TXT       },	
 	{"背光", VOICE_ID_INVALID,                       MENU_ABR           }, // was "ABR"
 	{"BLMin",  VOICE_ID_INVALID,                       MENU_ABR_MIN       },
 	{"BLMax",  VOICE_ID_INVALID,                       MENU_ABR_MAX       },
@@ -91,7 +91,7 @@ const t_menu_item MenuList[] =
 	{"语音",  VOICE_ID_VOICE_PROMPT,                  MENU_VOICE         },
 #endif
 	{"尾音",  VOICE_ID_INVALID,                       MENU_ROGER         },
-	{"STE",    VOICE_ID_INVALID,                       MENU_STE           },
+	{"消尾",    VOICE_ID_INVALID,                       MENU_STE           },
 	{"RP STE", VOICE_ID_INVALID,                       MENU_RP_STE        },
 	{"1 Call", VOICE_ID_INVALID,                       MENU_1_CALL        },
 #ifdef ENABLE_ALARM
@@ -105,7 +105,7 @@ const t_menu_item MenuList[] =
     {"D Resp", VOICE_ID_INVALID,                       MENU_D_RSP         },
 	{"D Hold", VOICE_ID_INVALID,                       MENU_D_HOLD        },
 	{"D Prel", VOICE_ID_INVALID,                       MENU_D_PRE         },
-	{"D Decd", VOICE_ID_INVALID,                       MENU_D_DCD         },
+	{"D 解码", VOICE_ID_INVALID,                       MENU_D_DCD         },
 	{"D List", VOICE_ID_INVALID,                       MENU_D_LIST        },
 	{"D Live", VOICE_ID_INVALID,                       MENU_D_LIVE_DEC    }, // live DTMF decoder
 #ifdef ENABLE_AM_FIX
@@ -115,10 +115,10 @@ const t_menu_item MenuList[] =
 	{"AM FT1", VOICE_ID_INVALID,                       MENU_AM_FIX_TEST1  },
 #endif
 #ifdef ENABLE_VOX
-	{"VOX",    VOICE_ID_VOX,                           MENU_VOX           },
+	{"声控",    VOICE_ID_VOX,                           MENU_VOX           },
 #endif
-	{"BatVol", VOICE_ID_INVALID,                       MENU_VOL           }, // was "VOL"
-	{"双守", VOICE_ID_DUAL_STANDBY,                  MENU_TDR           },
+	{"电池", VOICE_ID_INVALID,                       MENU_VOL           }, // was "VOL"
+	{"模式", VOICE_ID_DUAL_STANDBY,                  MENU_TDR           },
 	{"静噪",    VOICE_ID_SQUELCH,                       MENU_SQL           },
 
 	// hidden menu items from here on
@@ -211,9 +211,9 @@ const char* gSubMenu_RXMode[4] =
 
 const char gSubMenu_SC_REV[3][8] =
 {
-	"超时",
-	"CARRIER",
-	"STOP"
+	"超时恢复",
+	"消失恢复",
+	"立即停止"
 };
 
 const char* gSubMenu_MDF[4] =
