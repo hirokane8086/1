@@ -95,12 +95,10 @@ void UI_PrintString(const char *pString, uint8_t Start, uint8_t End, uint8_t Lin
 				{
 					memmove(gFrameBuffer[Line + 0] + ofs, &CNFont14[j][0], 14);
 					memmove(gFrameBuffer[Line + 1] + ofs, &CNFont14[j][14], 14);
+					i+=2;
+					ofs = (unsigned int)Start + (i * Width);
 					break;
 				}
-			i+=2;
-			// ofs = (unsigned int)Start + ((i+1-1) * Width);
-			if (pString[i+1] > 127)
-				ofs = (unsigned int)Start + ( i * Width);
 		}
 	}
 }
