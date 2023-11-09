@@ -68,6 +68,7 @@ void UI_PrintString(const char *pString, uint8_t Start, uint8_t End, uint8_t Lin
 {
 	size_t i, j;
 	size_t Length = strlen(pString);
+	const unsigned int ofs;
 
 
 	if (End > Start)
@@ -75,7 +76,7 @@ void UI_PrintString(const char *pString, uint8_t Start, uint8_t End, uint8_t Lin
 
 	for (i = 0; i < Length; i++)
 	{
-		const unsigned int ofs = (unsigned int)Start + (i * Width);
+		ofs = (unsigned int)Start + (i * Width);
 		if (pString[i] > ' ' && pString[i] < 127)
 		{
 			const unsigned int index = pString[i] - ' ' - 1;
@@ -86,13 +87,13 @@ void UI_PrintString(const char *pString, uint8_t Start, uint8_t End, uint8_t Lin
 		//if (pString[i] > 127)
 		{
 			if (i != 0 && pString[i-1] > 127)
-				const unsigned int cofs = (unsigned int)Start + ((i-1) * Width);
+				ofs = (unsigned int)Start + ((i-2) * Width);
 
 			for (j = 0; j< strlen(CNList)/3; j++)
 				if (pString[i]==CNList[3*j] && pString[i+1]==CNList[3*j+1] && pString[i+2]==CNList[3*j+2])
 				{
-					memmove(gFrameBuffer[Line + 0] + cofs, &CNFont14[j][0], 14);
-					memmove(gFrameBuffer[Line + 1] + cofs, &CNFont14[j][14], 14);
+					memmove(gFrameBuffer[Line + 0] + ofs, &CNFont14[j][0], 14);
+					memmove(gFrameBuffer[Line + 1] + ofs, &CNFont14[j][14], 14);
 					break;
 				}
 			i+=2;
