@@ -74,8 +74,7 @@ void UI_PrintString(const char *pString, uint8_t Start, uint8_t End, uint8_t Lin
 	{
 		if (pString[i] > 127)
 		{
-			RealLength++;
-			i++;
+			RealLength+=2;
 
 		}
 		else
