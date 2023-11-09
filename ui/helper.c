@@ -66,23 +66,13 @@ void UI_GenerateChannelStringEx(char *pString, const bool bShowPrefix, const uin
 
 void UI_PrintString(const char *pString, uint8_t Start, uint8_t End, uint8_t Line, uint8_t Width)
 {
-	size_t i, j, RealLength;
+	size_t i, j;
 	size_t Length = strlen(pString);
 	unsigned int ofs;
 
-	for (i = 0; i < Length; i++)
-	{
-		if (pString[i] > 127)
-		{
-			RealLength+=2;
-
-		}
-		else
-			RealLength++;
-	}
 
 	if (End > Start)
-		Start += (((End - Start) - (RealLength * Width)) + 1) / 2;
+		Start += (((End - Start) - (Length * Width)) + 1) / 2;
 
 	for (i = 0; i < Length; i++)
 	{
@@ -97,7 +87,7 @@ void UI_PrintString(const char *pString, uint8_t Start, uint8_t End, uint8_t Lin
 			memmove(gFrameBuffer[Line + 1] + ofs, &gFontBig[index][7], 7);
 		}
 		else
-		//if (pString[i] > 127)
+		if (pString[i] > 127)
 		{
 			for (j = 0; j< strlen(CNList)/3; j++)
 				if (pString[i]==CNList[3*j] && pString[i+1]==CNList[3*j+1] && pString[i+2]==CNList[3*j+2])
