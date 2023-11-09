@@ -85,6 +85,7 @@ void UI_PrintString(const char *pString, uint8_t Start, uint8_t End, uint8_t Lin
 			const unsigned int index = pString[i] - ' ' - 1;
 			memmove(gFrameBuffer[Line + 0] + ofs, &gFontBig[index][0], 7);
 			memmove(gFrameBuffer[Line + 1] + ofs, &gFontBig[index][7], 7);
+			// ofs = (unsigned int)Start + ((i+1-1) * Width);
 			ofs = (unsigned int)Start + (i * Width);
 		}
 		else
@@ -98,7 +99,8 @@ void UI_PrintString(const char *pString, uint8_t Start, uint8_t End, uint8_t Lin
 					break;
 				}
 			i+=2;
-			ofs = (unsigned int)Start + ((i-1) * Width);
+			// ofs = (unsigned int)Start + ((i+1-1) * Width);
+			ofs = (unsigned int)Start + (i * Width);
 		}
 	}
 }
