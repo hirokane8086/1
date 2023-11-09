@@ -99,7 +99,8 @@ void UI_PrintString(const char *pString, uint8_t Start, uint8_t End, uint8_t Lin
 				}
 			i+=2;
 			// ofs = (unsigned int)Start + ((i+1-1) * Width);
-			ofs = (unsigned int)Start + ( i * Width);
+			if (pString[i+1] > 127)
+				ofs = (unsigned int)Start + ( i * Width);
 		}
 	}
 }
