@@ -246,7 +246,7 @@ const char* gSubMenu_PTT_ID[5] =
 	"UP CODE",
 	"DOWN CODE",
 	"UP+DOWN\nCODE",
-	"阿波罗信令"
+	"阿波罗\n昆达信令"
 };
 
 const char gSubMenu_PONMSG[4][8] =
