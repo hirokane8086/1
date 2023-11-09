@@ -76,10 +76,11 @@ void UI_PrintString(const char *pString, uint8_t Start, uint8_t End, uint8_t Lin
 
 	for (i = 0; i < Length; i++)
 	{
+		ofs = (unsigned int)Start + (i * Width);
+		
 		if (i != 0 && pString[i-1] > 127)
 			ofs = (unsigned int)Start + ((i-1) * Width);
-
-		ofs = (unsigned int)Start + (i * Width);
+			
 		if (pString[i] > ' ' && pString[i] < 127)
 		{
 			const unsigned int index = pString[i] - ' ' - 1;
