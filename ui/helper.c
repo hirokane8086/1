@@ -68,7 +68,7 @@ void UI_PrintString(const char *pString, uint8_t Start, uint8_t End, uint8_t Lin
 {
 	size_t i, j;
 	size_t Length = strlen(pString);
-	const unsigned int ofs;
+	unsigned int ofs;
 
 
 	if (End > Start)
@@ -79,7 +79,7 @@ void UI_PrintString(const char *pString, uint8_t Start, uint8_t End, uint8_t Lin
 		if (i !=0 && pString[i] > 127)
 			ofs = (unsigned int)Start + ((i-2) * Width);
 		else
-			ofs   = (unsigned int)Start + (i * Width);
+			ofs = (unsigned int)Start + (i * Width);
 		if (pString[i] > ' ' && pString[i] < 127)
 		{
 			const unsigned int index = pString[i] - ' ' - 1;
