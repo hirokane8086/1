@@ -242,7 +242,7 @@ void UI_DisplayMain(void)
 
 	if (gEeprom.KEY_LOCK && gKeypadLocked > 0)
 	{	// tell user how to unlock the keyboard
-		UI_PrintString("长按F键", 0, LCD_WIDTH, 1, 8);
+		UI_PrintString("长按解锁键", 0, LCD_WIDTH, 1, 8);
 		UI_PrintString("以解锁", 0, LCD_WIDTH, 3, 8);
 		ST7565_BlitFullScreen();
 		return;
@@ -269,13 +269,13 @@ void UI_DisplayMain(void)
 				{
 					memset(Contact, 0, sizeof(Contact));
 					if (gDTMF_CallState == DTMF_CALL_STATE_CALL_OUT)
-						strcpy(String, (gDTMF_State == DTMF_STATE_CALL_OUT_RSP) ? "CALL OUT(RSP)" : "CALL OUT");
+						strcpy(String, (gDTMF_State == DTMF_STATE_CALL_OUT_RSP) ? "拨号(回答)" : "拨号");
 					else
 					if (gDTMF_CallState == DTMF_CALL_STATE_RECEIVED || gDTMF_CallState == DTMF_CALL_STATE_RECEIVED_STAY)
-						sprintf(String, "CALL FRM:%s", (DTMF_FindContact(gDTMF_Caller, Contact)) ? Contact : gDTMF_Caller);
+						sprintf(String, "呼叫来自:%s", (DTMF_FindContact(gDTMF_Caller, Contact)) ? Contact : gDTMF_Caller);
 					else
 					if (gDTMF_IsTx)
-						strcpy(String, (gDTMF_State == DTMF_STATE_TX_SUCC) ? "DTMF TX(SUCC)" : "DTMF TX");
+						strcpy(String, (gDTMF_State == DTMF_STATE_TX_SUCC) ? "DTMF 发射(成功)" : "DTMF 发射");
 				}
 				else
 				{

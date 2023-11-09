@@ -37,7 +37,7 @@ static void Render(void)
 	memset(gStatusLine,  0, sizeof(gStatusLine));
 	memset(gFrameBuffer, 0, sizeof(gFrameBuffer));
 
-	strcpy(String, "LOCK");
+	strcpy(String, "上锁");
 	UI_PrintString(String, 0, 127, 1, 10);
 	for (i = 0; i < 6; i++)
 		String[i] = (gInputBox[i] == 10) ? '-' : '*';

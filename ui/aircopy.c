@@ -34,12 +34,12 @@ void UI_DisplayAircopy(void)
 	memset(gFrameBuffer, 0, sizeof(gFrameBuffer));
 
 	if (gAircopyState == AIRCOPY_READY)
-		strcpy(String, "AIR COPY(RDY)");
+		strcpy(String, "无线复制(就绪)");
 	else
 	if (gAircopyState == AIRCOPY_TRANSFER)
-		strcpy(String, "AIR COPY");
+		strcpy(String, "无线复制");
 	else
-		strcpy(String, "AIR COPY(CMP)");
+		strcpy(String, "无线复制(完成)");
 	UI_PrintString(String, 2, 127, 0, 8);
 
 	if (gInputBoxIndex == 0)
@@ -60,10 +60,10 @@ void UI_DisplayAircopy(void)
 
 	memset(String, 0, sizeof(String));
 	if (gAirCopyIsSendMode == 0)
-		sprintf(String, "RCV:%u E:%u", gAirCopyBlockNumber, gErrorsDuringAirCopy);
+		sprintf(String, "收:%u E:%u", gAirCopyBlockNumber, gErrorsDuringAirCopy);
 	else
 	if (gAirCopyIsSendMode == 1)
-		sprintf(String, "SND:%u", gAirCopyBlockNumber);
+		sprintf(String, "发:%u", gAirCopyBlockNumber);
 	UI_PrintString(String, 2, 127, 4, 8);
 
 	ST7565_BlitFullScreen();

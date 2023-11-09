@@ -34,25 +34,25 @@ void UI_DisplayScanner(void)
 
 	memset(String, 0, sizeof(String));
 	if (gScanSingleFrequency || (gScanCssState != SCAN_CSS_STATE_OFF && gScanCssState != SCAN_CSS_STATE_FAILED))
-		sprintf(String, "FREQ:%u.%05u", gScanFrequency / 100000, gScanFrequency % 100000);
+		sprintf(String, "频率:%u.%05u", gScanFrequency / 100000, gScanFrequency % 100000);
 	else
-		strcpy(String, "FREQ:**.*****");
+		strcpy(String, "频率:**.*****");
 	UI_PrintString(String, 2, 0, 1, 8);
 
 	memset(String, 0, sizeof(String));
 	if (gScanCssState < SCAN_CSS_STATE_FOUND || !gScanUseCssResult)
-		strcpy(String, "CTC:******");
+		strcpy(String, "模拟亚音:******");
 	else
 	if (gScanCssResultType == CODE_TYPE_CONTINUOUS_TONE)
-		sprintf(String, "CTC:%u.%uHz", CTCSS_Options[gScanCssResultCode] / 10, CTCSS_Options[gScanCssResultCode] % 10);
+		sprintf(String, "模拟亚音:%u.%uHz", CTCSS_Options[gScanCssResultCode] / 10, CTCSS_Options[gScanCssResultCode] % 10);
 	else
-		sprintf(String, "DCS:D%03oN", DCS_Options[gScanCssResultCode]);
+		sprintf(String, "数字亚音:D%03oN", DCS_Options[gScanCssResultCode]);
 	UI_PrintString(String, 2, 0, 3, 8);
 
 	memset(String, 0, sizeof(String));
 	if (gScannerSaveState == SCAN_SAVE_CHANNEL)
 	{
-		strcpy(String, "SAVE?");
+		strcpy(String, "保存?");
 
 		Start     = 0;
 		bCentered = 1;
@@ -60,17 +60,17 @@ void UI_DisplayScanner(void)
 	else
 	{
 		if (gScannerSaveState == SCAN_SAVE_CHAN_SEL) {
-			strcpy(String, "SAVE:");
+			strcpy(String, "保存:");
 			UI_GenerateChannelStringEx(String + 5, gShowChPrefix, gScanChannel);
 		}
 		else if (gScanCssState < SCAN_CSS_STATE_FOUND) {
-			strcpy(String, "SCAN");
+			strcpy(String, "扫描");
 			memset(String + 4, '.', (gScanProgressIndicator & 7) + 1);
 		}
 		else if (gScanCssState == SCAN_CSS_STATE_FOUND)
-			strcpy(String, "SCAN CMP.");
+			strcpy(String, "扫描完成.");
 		else
-			strcpy(String, "SCAN FAIL.");
+			strcpy(String, "扫描失败.");
 
 		Start     = 2;
 		bCentered = 0;
