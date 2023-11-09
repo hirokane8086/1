@@ -70,9 +70,9 @@ const t_menu_item MenuList[] =
 	{"侧1长",    VOICE_ID_INVALID,                    MENU_F1LONG        },
 	{"侧2短",    VOICE_ID_INVALID,                    MENU_F2SHRT        },
 	{"侧2长",    VOICE_ID_INVALID,                    MENU_F2LONG        },
-	{"菜单长",    VOICE_ID_INVALID,                    MENU_MLONG         },
+	{"M长",    VOICE_ID_INVALID,                    MENU_MLONG         },
 
-	{"键盘锁", VOICE_ID_INVALID,                       MENU_AUTOLK        }, // was "AUTOLk"
+	{"键锁", VOICE_ID_INVALID,                       MENU_AUTOLK        }, // was "AUTOLk"
 	{"TxTOut", VOICE_ID_TRANSMIT_OVER_TIME,            MENU_TOT           }, // was "TOT"
 	{"节电", VOICE_ID_SAVE_MODE,                     MENU_SAVE          }, // was "SAVE"
 	{"话筒",    VOICE_ID_INVALID,                       MENU_MIC           },
@@ -105,7 +105,7 @@ const t_menu_item MenuList[] =
     {"D Resp", VOICE_ID_INVALID,                       MENU_D_RSP         },
 	{"D Hold", VOICE_ID_INVALID,                       MENU_D_HOLD        },
 	{"D Prel", VOICE_ID_INVALID,                       MENU_D_PRE         },
-	{"D 解码", VOICE_ID_INVALID,                       MENU_D_DCD         },
+	{"D 解", VOICE_ID_INVALID,                       MENU_D_DCD         },
 	{"D List", VOICE_ID_INVALID,                       MENU_D_LIST        },
 	{"D Live", VOICE_ID_INVALID,                       MENU_D_LIVE_DEC    }, // live DTMF decoder
 #ifdef ENABLE_AM_FIX
@@ -394,7 +394,7 @@ int     edit_index;
 
 void UI_DisplayMenu(void)
 {
-	const unsigned int menu_list_width = 12; // max no. of characters on the menu list (left side)
+	const unsigned int menu_list_width = 6; // max no. of characters on the menu list (left side)
 	const unsigned int menu_item_x1    = (8 * menu_list_width) + 2;
 	const unsigned int menu_item_x2    = LCD_WIDTH - 1;
 	unsigned int       i;
