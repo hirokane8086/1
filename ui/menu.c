@@ -209,7 +209,7 @@ const char* gSubMenu_RXMode[4] =
 	};
 #endif
 
-const char gSubMenu_SC_REV[3][8] =
+const char gSubMenu_SC_REV[3] =
 {
 	"超时恢复",
 	"消失恢复",
@@ -246,7 +246,7 @@ const char* gSubMenu_PTT_ID[5] =
 	"UP CODE",
 	"DOWN CODE",
 	"UP+DOWN\nCODE",
-	"阿波罗\n昆达信令"
+	"阿波罗信令"
 };
 
 const char gSubMenu_PONMSG[4][8] =
@@ -394,7 +394,7 @@ int     edit_index;
 
 void UI_DisplayMenu(void)
 {
-	const unsigned int menu_list_width = 6; // max no. of characters on the menu list (left side)
+	const unsigned int menu_list_width = 12; // max no. of characters on the menu list (left side)
 	const unsigned int menu_item_x1    = (8 * menu_list_width) + 2;
 	const unsigned int menu_item_x2    = LCD_WIDTH - 1;
 	unsigned int       i;
