@@ -76,10 +76,11 @@ void UI_PrintString(const char *pString, uint8_t Start, uint8_t End, uint8_t Lin
 
 	for (i = 0; i < Length; i++)
 	{
-		ofs = (unsigned int)Start + (i * Width);
-		
-		if (i != 0 && pString[i-1] > 127)
-			ofs = (unsigned int)Start + ((i-1) * Width);
+		if (i != 0)
+			if (pString[i-1] > 127)
+				ofs = (unsigned int)Start + (i * Width);
+			else
+				ofs = (unsigned int)Start + ((i-1) * Width);
 			
 		if (pString[i] > ' ' && pString[i] < 127)
 		{

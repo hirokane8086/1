@@ -292,12 +292,12 @@ const char gSubMenu_BACKLIGHT[8][7] =
 	"常开"
 };
 
-const char gSubMenu_RX_TX[4][7] =
+const char gSubMenu_RX_TX[4][6] =
 {
 	"关",
 	"发",
 	"收",
-	"收/发"
+	"收发"
 };
 
 #ifdef ENABLE_AM_FIX_TEST1
