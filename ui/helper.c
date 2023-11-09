@@ -86,19 +86,16 @@ void UI_PrintString(const char *pString, uint8_t Start, uint8_t End, uint8_t Lin
 		//if (pString[i] > 127)
 		{
 			if (i != 0)
-				const unsigned int cn_ofs = (unsigned int)Start + ((i-1) * Width);
-			else
-			{
-				const unsigned int cn_ofs = (unsigned int)Start + (i * Width);
-				for (j = 0; j< strlen(CNList)/3; j++)
-					if (pString[i]==CNList[3*j] && pString[i+1]==CNList[3*j+1] && pString[i+2]==CNList[3*j+2])
-					{
-						memmove(gFrameBuffer[Line + 0] + cn_ofs, &CNFont14[j][0], 14);
-						memmove(gFrameBuffer[Line + 1] + cn_ofs, &CNFont14[j][14], 14);
-						break;
-					}
-				i+=2;
-			}
+				const unsigned int ofs = (unsigned int)Start + ((i-1) * Width);
+
+			for (j = 0; j< strlen(CNList)/3; j++)
+				if (pString[i]==CNList[3*j] && pString[i+1]==CNList[3*j+1] && pString[i+2]==CNList[3*j+2])
+				{
+					memmove(gFrameBuffer[Line + 0] + ofs, &CNFont14[j][0], 14);
+					memmove(gFrameBuffer[Line + 1] + ofs, &CNFont14[j][14], 14);
+					break;
+				}
+			i+=2;
 		}
 	}
 }
