@@ -74,7 +74,7 @@ void UI_PrintString(const char *pString, uint8_t Start, uint8_t End, uint8_t Lin
 	if (End > Start)
 		Start += (((End - Start) - (Length * Width)) + 1) / 2;
 	// init
-	ofs = (unsigned int)Start
+	ofs = (unsigned int)Start;
 
 	for (i = 0; i < Length; i++)
 	{
