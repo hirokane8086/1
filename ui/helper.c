@@ -76,6 +76,9 @@ void UI_PrintString(const char *pString, uint8_t Start, uint8_t End, uint8_t Lin
 
 	for (i = 0; i < Length; i++)
 	{
+		if (i != 0 && pString[i-1] > 127)
+			ofs = (unsigned int)Start + ((i-1) * Width);
+
 		ofs = (unsigned int)Start + (i * Width);
 		if (pString[i] > ' ' && pString[i] < 127)
 		{
@@ -86,9 +89,6 @@ void UI_PrintString(const char *pString, uint8_t Start, uint8_t End, uint8_t Lin
 		else
 		//if (pString[i] > 127)
 		{
-			if (i != 0 && pString[i-1] > 127)
-				ofs = (unsigned int)Start + ((i-1) * Width);
-
 			for (j = 0; j< strlen(CNList)/3; j++)
 				if (pString[i]==CNList[3*j] && pString[i+1]==CNList[3*j+1] && pString[i+2]==CNList[3*j+2])
 				{
