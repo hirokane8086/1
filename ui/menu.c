@@ -237,7 +237,7 @@ const char gSubMenu_D_RSP[4][11] =
 	"无",
 	"响铃",
 	"回答",
-	"皆有"
+	"全开"
 };
 
 const char* gSubMenu_PTT_ID[5] =
@@ -246,7 +246,7 @@ const char* gSubMenu_PTT_ID[5] =
 	"UP CODE",
 	"DOWN CODE",
 	"UP+DOWN\nCODE",
-	"阿波罗\n昆达信令"
+	"Quindar\nTones"
 };
 
 const char gSubMenu_PONMSG[4][8] =

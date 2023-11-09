@@ -103,7 +103,7 @@ void UI_PrintString(const char *pString, uint8_t Start, uint8_t End, uint8_t Lin
 void UI_PrintStringSmall(const char *pString, uint8_t Start, uint8_t End, uint8_t Line)
 {
 	const size_t Length = strlen(pString);
-	size_t       i;
+	size_t       i, j;
 
 	if (End > Start)
 		Start += (((End - Start) - (Length * 8)) + 1) / 2;
@@ -115,6 +115,18 @@ void UI_PrintStringSmall(const char *pString, uint8_t Start, uint8_t End, uint8_
 	{
 		if (pString[i] > ' ')
 		{
+			if (pString[i] > 127)
+			{
+				for (j = 0; j< strlen(CNList)/3; j++)
+					if (pString[i]==CNList[3*j] && pString[i+1]==CNList[3*j+1] && pString[i+2]==CNList[3*j+2])
+					{
+						memmove(pFb + (i * char_spacing) + 1, &CNFont12[j], char_width *2);
+						
+						i+=2;
+						break;
+					}
+				continue;
+			}
 			const unsigned int index = (unsigned int)pString[i] - ' ' - 1;
 			if (index < ARRAY_SIZE(gFontSmall))
 				memmove(pFb + (i * char_spacing) + 1, &gFontSmall[index], char_width);
