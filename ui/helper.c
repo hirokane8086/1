@@ -120,9 +120,7 @@ void UI_PrintStringSmall(const char *pString, uint8_t Start, uint8_t End, uint8_
 				for (j = 0; j< strlen(CNList)/3; j++)
 					if (pString[i]==CNList[3*j] && pString[i+1]==CNList[3*j+1] && pString[i+2]==CNList[3*j+2])
 					{
-						memmove(pFb + (i * char_spacing) + 1, &CNFont12[j], char_width *2);
-						
-						i+=2;
+						memmove(pFb + (i * char_spacing) + 1, &CNFont6[j], char_width);
 						break;
 					}
 				continue;
