@@ -68,7 +68,6 @@ void UI_PrintString(const char *pString, uint8_t Start, uint8_t End, uint8_t Lin
 {
 	size_t i, j;
 	size_t Length = strlen(pString);
-	unsigned int cn_ofs;
 
 
 	if (End > Start)
@@ -84,13 +83,13 @@ void UI_PrintString(const char *pString, uint8_t Start, uint8_t End, uint8_t Lin
 			memmove(gFrameBuffer[Line + 1] + ofs, &gFontBig[index][7], 7);
 		}
 		else
-		if (pString[i] > 127)
+		//if (pString[i] > 127)
 		{
 			if (i != 0)
-				unsigned int cn_ofs = (unsigned int)Start + ((i-1) * Width);
+				const unsigned int cn_ofs = (unsigned int)Start + ((i-1) * Width);
 			else
 			{
-				unsigned int cn_ofs = (unsigned int)Start + (i * Width);
+				const unsigned int cn_ofs = (unsigned int)Start + (i * Width);
 				for (j = 0; j< strlen(CNList)/3; j++)
 					if (pString[i]==CNList[3*j] && pString[i+1]==CNList[3*j+1] && pString[i+2]==CNList[3*j+2])
 					{
